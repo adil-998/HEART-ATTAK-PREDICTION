@@ -1,79 +1,99 @@
-Heart Attack Prediction
-This project aims to predict the likelihood of a heart attack based on various medical indicators. The analysis and model development are performed using a Jupyter Notebook with Python and popular data science libraries such as pandas, numpy, scikit-learn, matplotlib, and seaborn.
+❤️ Heart Attack Prediction
 
-Project Overview
-The core of this project is a machine learning model that uses a dataset containing patient information to predict a binary outcome: whether a heart attack is likely ("positive") or not ("negative").
+This project aims to predict the likelihood of a heart attack based on various medical indicators using machine learning techniques. The model is built and tested in a Jupyter Notebook with Python and popular data science libraries such as pandas, numpy, scikit-learn, matplotlib, and seaborn.
 
-The key steps in this project include:
+📌 Project Overview
 
-Data Loading and Initial Exploration: Reading the dataset and getting a first look at the data, including its shape, column types, and a few sample rows.
+The goal of this project is to develop a binary classification model that predicts whether a patient is at risk of a heart attack (positive) or not (negative).
 
-Data Preprocessing: Cleaning and preparing the data for model training. This includes checking for missing values, handling duplicates, and converting the 'Result' column from categorical text to a numerical format (0 for 'negative' and 1 for 'positive'). The Blood sugar column was also converted to an integer type.
+Key Steps
 
-Outlier Detection and Removal: Using the Interquartile Range (IQR) method to identify and remove outliers in columns like 'Age', 'Heart rate', 'CK-MB', and 'Troponin'. This step is crucial for improving model accuracy by ensuring the data is within a realistic range.
+Data Loading & Exploration
 
-Exploratory Data Analysis (EDA): Visualizing relationships between key variables. This includes:
+Load dataset, check shape, column types, and preview rows.
 
-A histogram of 'Blood sugar' to understand its distribution.
+Data Preprocessing
 
-A bar plot showing the relationship between 'Gender' and the 'Result'.
+Handle missing values and duplicates.
 
-A bar plot highlighting the top 5 age groups associated with positive results.
+Convert categorical labels (Result) into numeric format (0 = negative, 1 = positive).
 
-A scatter plot visualizing the relationship between 'CK-MB' and 'Troponin' levels.
+Convert Blood sugar to integer type.
 
-A correlation heatmap to understand the relationships between different numerical features.
+Outlier Detection & Removal
 
-Model Building:
+Use the IQR method to detect and remove outliers in Age, Heart rate, CK-MB, and Troponin.
 
-The dataset is split into training and testing sets.
+Exploratory Data Analysis (EDA)
 
-A Logistic Regression model is trained to establish a baseline.
+Histogram of Blood sugar.
 
-A Random Forest Classifier is then trained, which significantly improves prediction accuracy.
+Bar plot of Gender vs. Result.
 
-Model Evaluation: The models are evaluated using several metrics to assess their performance:
+Bar plot of Top 5 age groups with positive results.
 
-Accuracy: The proportion of correctly predicted instances.
+Scatter plot of CK-MB vs. Troponin.
 
-Precision: The proportion of true positive results among all positive predictions.
+Correlation heatmap for feature relationships.
 
-Recall: The proportion of true positive results that were correctly identified.
+Model Building
 
-F1 Score: The harmonic mean of precision and recall.
+Split dataset into training and testing sets.
 
-Confusion Matrix: A table showing the number of true positives, true negatives, false positives, and false negatives.
+Train models:
 
-Key Findings
-The initial exploratory analysis reveals important relationships between different health metrics and the prediction result.
+Logistic Regression (baseline, ~65% accuracy).
 
-The Logistic Regression model provides a reasonable baseline but shows a warning about convergence, which suggests that the features may need scaling. Even after scaling, the accuracy of the Logistic Regression model was about 65%.
+Random Forest Classifier (best performance, ~97% accuracy).
 
-The Random Forest Classifier model demonstrates superior performance with an accuracy of over 97%, indicating it is well-suited for this prediction task.
+Model Evaluation
 
-How to Run the Notebook
-To run this project, you will need a Python environment with the following libraries installed:
+Accuracy, Precision, Recall, F1 Score
 
-numpy
+Confusion Matrix for detailed performance evaluation.
 
-pandas
+📊 Key Findings
 
-matplotlib
+Logistic Regression gave a reasonable baseline (~65% accuracy) but showed convergence warnings → feature scaling helped but performance remained limited.
 
-seaborn
+Random Forest Classifier achieved 97% accuracy, making it the best-suited model for this dataset.
 
-scikit-learn
+EDA revealed strong relationships between certain health metrics and the likelihood of a heart attack.
 
-jupyter
+⚙️ Installation & Setup
 
-You can install these libraries using pip:
-
-Bash
+Make sure you have Python 3.7+ installed. Install the required libraries:
 
 pip install numpy pandas matplotlib seaborn scikit-learn jupyter
-Once the dependencies are installed, you can open and run the heart attack prediction.ipynb notebook using Jupyter:
 
-Bash
+🚀 How to Run
+
+Clone this repository or download the files.
+
+Open the terminal and launch Jupyter Notebook:
 
 jupyter notebook
-This will open a web browser where you can navigate to the notebook file and execute the cells in sequence.
+
+
+Open heart_attack_prediction.ipynb in the Jupyter interface.
+
+Run all cells to see the data analysis, visualizations, and model results.
+
+🛠️ Tech Stack
+
+Python
+
+pandas & numpy – data processing
+
+matplotlib & seaborn – visualization
+
+scikit-learn – machine learning models & evaluation
+
+📌 Future Improvements
+
+Add hyperparameter tuning (GridSearchCV / RandomizedSearchCV).
+
+Test other ML algorithms like XGBoost, SVM, Neural Networks.
+
+Build a web app (Streamlit/Flask) for user-friendly prediction.
+
